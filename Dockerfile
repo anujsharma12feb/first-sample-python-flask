@@ -1,8 +1,9 @@
 FROM ubuntu:18.04
 
-RUN apt-get update
-RUN apt-get install -y python
-RUN apt-get install -y python-pip
+LABEL maintainer="Anuj Sharma"
+RUN apt-get update \
+    && apt-get install -y python \ 
+    && apt-get install -y python-pip
 RUN pip install flask
 
 COPY app.py /opt/
